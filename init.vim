@@ -18,9 +18,9 @@ set modelines=0
 set wrap
 " Vim's auto indentation feature does not work properly with text copied from outside of Vim. Press the <F2> key to toggle paste mode on/off.
 nnoremap <F2> :set invpaste paste?<CR>
-nnoremap <leader>fa :FlutterRun<cr>
-nnoremap <leader>fq :FlutterQuit<cr>
-nnoremap <leader>fr :FlutterHotReload<cr>
+nnoremap <leader>a :FlutterRun<cr>
+nnoremap <leader>q :FlutterQuit<cr>
+nnoremap <leader>r :FlutterHotReload<cr>
 nnoremap <leader>fR :FlutterHotRestart<cr>
 nnoremap <leader>fD :FlutterVisualDebug<cr>
 imap <F2> <C-O>:set invpaste paste?<CR>
