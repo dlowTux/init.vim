@@ -12,17 +12,13 @@ syntax on
 filetype plugin indent on
 
 " Turn off modelines
-set modelines=0
+
 
 " Automatically wrap text that extends beyond the screen length.
 set wrap
 " Vim's auto indentation feature does not work properly with text copied from outside of Vim. Press the <F2> key to toggle paste mode on/off.
 nnoremap <F2> :set invpaste paste?<CR>
-nnoremap <leader>a :FlutterRun<cr>
-nnoremap <leader>q :FlutterQuit<cr>
-nnoremap <leader>r :FlutterHotReload<cr>
-nnoremap <leader>fR :FlutterHotRestart<cr>
-nnoremap <leader>fD :FlutterVisualDebug<cr>
+
 imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F2>
 
@@ -87,9 +83,14 @@ noremap <leader>gs :CocSearch
 noremap <leader>fs :Files<cr>
 noremap <leader><cr> <cr><c-w>h:q<cr>
 
+nnoremap <leader>a :FlutterRun<cr>
+nnoremap <leader>q :FlutterQuit<cr>
+nnoremap <leader>r :FlutterHotReload<cr>
+nnoremap <leader>fR :FlutterHotRestart<cr>
+nnoremap <leader>fD :FlutterVisualDebug<cr>
+map <C-n> :NERDTreeToggle<CR>
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'preservim/nerdtree'
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
@@ -102,6 +103,8 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'natebosch/vim-lsc'
 Plug 'natebosch/vim-lsc-dart'
 Plug 'ajmwagar/vim-deus'
+Plug 'phanviet/vim-monokai-pro'
+
 call plug#end()
 set t_Co=256
 set termguicolors
@@ -109,10 +112,15 @@ set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-set background=dark    " Setting dark mode
-colorscheme deus
+"set background=dark    " Setting dark mode
+"colorscheme deus
+"de mono kai
 let g:deus_termcolors=256
-
+set termguicolors
+colorscheme monokai_pro
+let g:lightline = {
+      \ 'colorscheme': 'monokai_pro',
+    \ }
 let dart_html_in_string=v:true
 let g:dart_style_guide = 2
 let g:dart_format_on_save = 1
@@ -125,3 +133,5 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 :imap ii <Esc>
+"Java
+
