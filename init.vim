@@ -97,17 +97,29 @@ Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 Plug 'vim-airline/vim-airline'
 Plug 'dikiaap/minimalist'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'natebosch/vim-lsc'
 Plug 'natebosch/vim-lsc-dart'
 Plug 'ajmwagar/vim-deus'
 Plug 'phanviet/vim-monokai-pro'
-
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'morhetz/gruvbox'
+Plug 'HerringtonDarkholme/yats.vim'
+" or Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
-set t_Co=256
-set termguicolors
+
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = "hard"
+highlight Normal ctermbg=NONE
+set laststatus=2
+set noshowmode
+"colorscheme dracula
+"set t_Co=256
+"set termguicolors
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -115,12 +127,12 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "set background=dark    " Setting dark mode
 "colorscheme deus
 "de mono kai
-let g:deus_termcolors=256
-set termguicolors
-colorscheme monokai_pro
-let g:lightline = {
-      \ 'colorscheme': 'monokai_pro',
-    \ }
+"let g:deus_termcolors=256
+"set termguicolors
+"colorscheme monokai_pro
+"let g:lightline = {
+ "     \ 'colorscheme': 'monokai_pro',
+ "   \ }
 let dart_html_in_string=v:true
 let g:dart_style_guide = 2
 let g:dart_format_on_save = 1
@@ -134,4 +146,5 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 :imap ii <Esc>
 "Java
+
 
