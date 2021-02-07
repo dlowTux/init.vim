@@ -1,138 +1,89 @@
-" Set compatibility to Vim only.
-set nocompatible
-set nolist
-set rnu
-" Helps force plug-ins to load correctly when it is turned back on below.
-filetype off
-
-" Turn on syntax highlighting.
+set nocompatible              " be iMproved, required
+filetype off                  " required
 syntax on
-
-" For plug-ins to load correctly.
-filetype plugin indent on
-
-" Turn off modelines
-
-
-" Automatically wrap text that extends beyond the screen length.
-set wrap
-" Vim's auto indentation feature does not work properly with text copied from outside of Vim. Press the <F2> key to toggle paste mode on/off.
-nnoremap <F2> :set invpaste paste?<CR>
-
-imap <F2> <C-O>:set invpaste paste?<CR>
-set pastetoggle=<F2>
-
-" Uncomment below to set the max textwidth. Use a value corresponding to the width of your screen.
-set textwidth=79
-set formatoptions=tcqrn1
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set relativenumber
+set nu
+set nohlsearch
+set hidden 
+set nowrap
+set noswapfile
+set nobackup
+set incsearch
+"ident
+set tabstop=4 softtabstop=4
+set shiftwidth=4
 set expandtab
-set noshiftround
+set smartindent
+set colorcolumn=80
 
-" Display 5 lines above/below the cursor when scrolling with a mouse.
-set scrolloff=5
-" Fixes common backspace problems
-set backspace=indent,eol,start
-
-" Speed up scrolling in Vim
-set ttyfast
-
-" Status bar
-set laststatus=2
-
-" Display options
-set showmode
-set showcmd
-
-" Highlight matching pairs of brackets. Use the '%' character to jump between them.
-set matchpairs+=<:>
-
-" Show line numbers
-set number
-
+set signcolumn=yes
 " Set status line display
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
 
-" Encoding
-set encoding=utf-8
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Mouse Scrolling
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set mouse=nicr
+set clipboard=unnamedplus       " Copy/paste between vim and other programs.
 
-" Highlight matching search patterns
-set hlsearch
-" Enable incremental search
-set incsearch
-" Include matching uppercase words with lowercase search term
-set ignorecase
-" Include only uppercase words with uppercase search term
-set smartcase
-
-" Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data. Useful for copying large amounts of data between files.
-set viminfo='100,<9999,s100
-
-" Map the <Space> key to toggle a selected fold opened/closed.
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-vnoremap <Space> zf
-
-" Automatically save and load folds
-autocmd BufWinLeave . mkview
-autocmd BufWinEnter . silent loadview"
+"Search
 let mapleader = ","
 noremap <leader>w :w<cr>
 noremap <leader>gs :CocSearch
 noremap <leader>fs :Files<cr>
 noremap <leader><cr> <cr><c-w>h:q<cr>
-
+"This open a terminal inside of vim
+map <Leader>tt :vnew term://zsh<CR>
+"Flutter shortcuts
 nnoremap <leader>a :FlutterRun<cr>
 nnoremap <leader>q :FlutterQuit<cr>
 nnoremap <leader>r :FlutterHotReload<cr>
 nnoremap <leader>fR :FlutterHotRestart<cr>
 nnoremap <leader>fD :FlutterVisualDebug<cr>
+"NerdTree 
 map <C-n> :NERDTreeToggle<CR>
+"Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'preservim/nerdtree'
+"Ide
+Plug 'preservim/nerdtree'  " Menu 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
+Plug 'vim-airline/vim-airline' " The bar
+Plug 'ryanoasis/vim-devicons' "Icons
+Plug 'junegunn/vim-emoji'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+"JavaScript
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
-Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
-Plug 'vim-airline/vim-airline'
-Plug 'dikiaap/minimalist'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'maxmellon/vim-jsx-pretty' " React syntax
+Plug 'HerringtonDarkholme/yats.vim'
+
+"Dart and flutter 
+Plug 'natebosch/vim-lsc'
 Plug 'thosakwe/vim-flutter'
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'natebosch/vim-lsc'
 Plug 'natebosch/vim-lsc-dart'
+"Python
+Plug 'vim-python/python-syntax' 
+"Themes
 Plug 'ajmwagar/vim-deus'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'morhetz/gruvbox'
-Plug 'HerringtonDarkholme/yats.vim'
-" or Plug 'leafgarland/typescript-vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 call plug#end()
-
+"Python 
+let g:python_highlight_all = 1
+"The theme 
 colorscheme gruvbox
-let g:gruvbox_contrast_dark = "hard"
-highlight Normal ctermbg=NONE
-set laststatus=2
-set noshowmode
-"colorscheme dracula
-"set t_Co=256
-"set termguicolors
+"Emojis 
+let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
+let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
+let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
+let g:gitgutter_sign_modified_removed = emoji#for('collision')
+set completefunc=emoji#complete
 
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-"set background=dark    " Setting dark mode
-"colorscheme deus
-"de mono kai
-"let g:deus_termcolors=256
-"set termguicolors
-"colorscheme monokai_pro
-"let g:lightline = {
- "     \ 'colorscheme': 'monokai_pro',
- "   \ }
+"Server dart and typescript
 let dart_html_in_string=v:true
 let g:dart_style_guide = 2
 let g:dart_format_on_save = 1
@@ -145,6 +96,6 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 :imap ii <Esc>
-"Java
+
 
 
