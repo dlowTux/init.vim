@@ -1,22 +1,22 @@
 # nvim
 my neovim config for python flask, php flutter javascrpit
 ## installation
--[Vim Plug](https://github.com/junegunn/vim-plug)
--[Node JS](#NodeJs)(https://nodejs.org/es/)
-### Debian Ubuntu
+### Vim plug [](https://github.com/junegunn/vim-plug)
+### Node
+#### Debian Ubuntu
 sudo apt-get install nodejs
-### Arch Linux
+#### Arch Linux
 sudo pacman -Syu nodejs
-### Fedora
+#### Fedora
 sudo dnf install nodejs
--[npm](#npm)(https://www.npmjs.com/)
-### Debian Ubuntu
+### npm
+#### Debian Ubuntu
 sudo apt-get install npm
-### Arch Linux
+#### Arch Linux
 sudo pacman -Syu npm
-### Fedora
+#### Fedora
 sudo dnf install npm
--[yarn](https://yarnpkg.com/)
+### yarn
 sudo npm install yarn
 
 ![](./1.png)
