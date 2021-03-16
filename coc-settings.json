@@ -8,12 +8,5 @@
         "yaml",
         "json"
     ],
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "eslint.enable": true,
-    "snippets.ultisnips.directories": [
-        "UltiSnips",
-        "~/.config/nvim/utils/snips"
-    ],
-    "explorer.icon.enableVimDevicons": true
+    "python.linting.enabled": true
 }

@@ -42,6 +42,7 @@ nnoremap <leader>fR :FlutterHotRestart<cr>
 nnoremap <leader>fD :FlutterVisualDebug<cr>
 "NerdTree 
 map <C-n> :NERDTreeToggle<CR>
+map <C-a> :Prettier<CR>
 "Plugins
 call plug#begin('~/.vim/plugged')
 "Ide
@@ -51,7 +52,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 Plug 'vim-airline/vim-airline' " The bar
 Plug 'ryanoasis/vim-devicons' "Icons
-Plug 'junegunn/vim-emoji'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 "JavaScript
 Plug 'pangloss/vim-javascript'    " JavaScript support
@@ -76,13 +76,6 @@ call plug#end()
 let g:python_highlight_all = 1
 "The theme 
 colorscheme gruvbox
-"Emojis 
-let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
-let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
-let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
-let g:gitgutter_sign_modified_removed = emoji#for('collision')
-set completefunc=emoji#complete
-
 "Server dart and typescript
 let dart_html_in_string=v:true
 let g:dart_style_guide = 2
