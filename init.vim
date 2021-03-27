@@ -43,6 +43,8 @@ nnoremap <leader>fD :FlutterVisualDebug<cr>
 "NerdTree 
 map <C-n> :NERDTreeToggle<CR>
 map <C-a> :Prettier<CR>
+filetype plugin indent on    " required
+set t_Co=256                    " Set if term supports 256 colors.
 "Plugins
 call plug#begin('~/.vim/plugged')
 "Ide
@@ -53,17 +55,20 @@ Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 Plug 'vim-airline/vim-airline' " The bar
 Plug 'ryanoasis/vim-devicons' "Icons
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'jiangmiao/auto-pairs' "Complte the simbol 
+Plug 'alvan/vim-closetag'   "Close tag in html
+Plug 'yggdroot/indentline' "A ident help for python and other languajes
 "JavaScript
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty' " React syntax
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'HerringtonDarkholme/yats.vim' "TypeScript Syntax
 
 "Dart and flutter 
 Plug 'natebosch/vim-lsc'
 Plug 'thosakwe/vim-flutter'
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'natebosch/vim-lsc-dart'
+Plug 'natebosch/vim-lsc-dart' 
 "Python
 Plug 'vim-python/python-syntax' 
 "Themes
@@ -75,7 +80,7 @@ call plug#end()
 "Python 
 let g:python_highlight_all = 1
 "The theme 
-colorscheme gruvbox
+colorscheme dracula
 "Server dart and typescript
 let dart_html_in_string=v:true
 let g:dart_style_guide = 2
@@ -89,6 +94,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 :imap ii <Esc>
+
 
 
 
