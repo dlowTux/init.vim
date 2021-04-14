@@ -29,9 +29,9 @@ set clipboard=unnamedplus       " Copy/paste between vim and other programs.
 "Search
 let mapleader = ","
 noremap <leader>w :w<cr>
-noremap <leader>gs :CocSearch
+
 noremap <leader>fs :Files<cr>
-noremap <leader><cr> <cr><c-w>h:q<cr>
+
 "This open a terminal inside of vim
 map <Leader>tt :vnew term://zsh<CR>
 "Flutter shortcuts
@@ -93,7 +93,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-:imap ii <Esc>
+
 
 
 
