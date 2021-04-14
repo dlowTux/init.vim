@@ -29,9 +29,9 @@ set clipboard=unnamedplus       " Copy/paste between vim and other programs.
 "Search
 let mapleader = ","
 noremap <leader>w :w<cr>
-
+noremap <leader>gs :CocSearch
 noremap <leader>fs :Files<cr>
-
+noremap <leader><cr> <cr><c-w>h:q<cr>
 "This open a terminal inside of vim
 map <Leader>tt :vnew term://zsh<CR>
 "Flutter shortcuts
@@ -58,6 +58,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'jiangmiao/auto-pairs' "Complte the simbol 
 Plug 'alvan/vim-closetag'   "Close tag in html
 Plug 'yggdroot/indentline' "A ident help for python and other languajes
+
 "JavaScript
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
@@ -72,15 +73,29 @@ Plug 'natebosch/vim-lsc-dart'
 "Python
 Plug 'vim-python/python-syntax' 
 "Themes
+
 Plug 'ajmwagar/vim-deus'
-Plug 'phanviet/vim-monokai-pro'
+Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'morhetz/gruvbox'
+Plug 'kaicataldo/material.vim'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 "Python 
 let g:python_highlight_all = 1
 "The theme 
-colorscheme dracula
+"colorscheme onedark
+"colorscheme deus
+
+"let g:material_terminal_italics = 1
+"let g:material_theme_style = 'darker'
+"colorscheme material
+
+set termguicolors     " enable true colors support
+let ayucolor="mirage"   " for dark version of theme
+colorscheme ayu
+let g:airline_theme = 'ayu'
+
 "Server dart and typescript
 let dart_html_in_string=v:true
 let g:dart_style_guide = 2
@@ -93,7 +108,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
 
 
 
