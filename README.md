@@ -59,4 +59,5 @@ My keybindings in normal mode
 | **gy**               | Type definition             |
 | **gi**               | Go implementation          |
 | **gr**               | Go references              |
+
 ![](./1.png)
