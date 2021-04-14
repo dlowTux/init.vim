@@ -29,14 +29,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ```
 sudo npm install yarn
 ```
-### extensions 
-```
-- :CocInstall coc-html
-- :CocInstall coc-git
-- :CocInstall coc-pyright
-- :CocInstall flutter
-- :CocInstall coc-css
-```
+
 ### Setting
 #### Dart skd
 ```
@@ -52,7 +45,14 @@ Download it from https://www.nerdfonts.com/font-downloads
 I recomend to use momonoki nerd font
 
 Then execute ```:PlugInstall``` inside neovim and it should be ready.
-
+### extensions 
+```
+- :CocInstall coc-html
+- :CocInstall coc-git
+- :CocInstall coc-pyright
+- :CocInstall flutter
+- :CocInstall coc-css
+```
 # Using
 
 My keybindings in normal mode
