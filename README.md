@@ -40,5 +40,23 @@ Compile the source code
 #### NerdFonts
 Download it from https://www.nerdfonts.com/font-downloads
 I recomend to use momonoki nerd font
+# Using
 
+My keybindings in normal mode
+
+| Key                  | Action                     |
+| -------------------- | -------------------------- |
+| **,+w**              | Save a file                 |
+| **,+fs**             | Search a file               |
+| **,+tt**             | Open a terminal            |
+| **a**                | Flutter run                |
+| **q**                | Flutter quit               |
+| **r**                | Flutter Reload             |
+| **fR**               | Flutter Restart            |  
+| **Ctrl+n**           | Nerd Tree                  |
+| **Ctrl+a**           | Format code                |
+| **gd**               | Go definition               |
+| **gy**               | Type definition             |
+| **gi**               | Go implementation          |
+| **gr**               | Go references              |
 ![](./1.png)
