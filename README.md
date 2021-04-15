@@ -2,7 +2,9 @@
 my neovim config for python flask, php flutter javascrpit
 
 ![](./1.png)
-
+![](./2.png)
+![](./3.png)
+![](./4.png)
 ## installation
 ### Vim plug
 ```
