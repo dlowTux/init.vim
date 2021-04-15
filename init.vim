@@ -83,18 +83,41 @@ Plug 'ayu-theme/ayu-vim'
 call plug#end()
 "Python 
 let g:python_highlight_all = 1
-"The theme 
-"colorscheme onedark
+
+"colorscheme gruvbox
 "colorscheme deus
 
+"Matirial
 "let g:material_terminal_italics = 1
 "let g:material_theme_style = 'darker'
 "colorscheme material
 
-set termguicolors     " enable true colors support
-let ayucolor="mirage"   " for dark version of theme
-colorscheme ayu
-let g:airline_theme = 'ayu'
+"ayu
+"set termguicolors     " enable true colors support
+"let ayucolor="mirage"   " for dark version of theme
+"colorscheme ayu
+"let g:airline_theme = 'ayu'
+
+"onedark
+if (has("autocmd") && !has("gui_running"))
+  augroup colorset
+    autocmd!
+    let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
+    autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " `bg` will not be styled since there is no `bg` setting
+  augroup END
+endif
+
+hi Comment cterm=italic
+let g:onedark_hide_endofbuffer=1
+let g:onedark_terminal_italics=1
+let g:onedark_termcolors=256
+
+if(has("termguicolors"))
+    hi LineNr ctermbg=NONE guibg=NONE
+endif
+
+colorscheme onedark
+let g:airline_theme = 'onedark'
 
 "Server dart and typescript
 let dart_html_in_string=v:true
@@ -108,7 +131,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
 
 
 
