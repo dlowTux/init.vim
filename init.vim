@@ -62,6 +62,8 @@ Plug 'alvan/vim-closetag'   "Close tag in html
 Plug 'yggdroot/indentline' "A ident help for python and other languajes
 Plug 'mbbill/undotree'
 Plug 'vuciv/vim-bujo' " Task manager
+Plug 'tpope/vim-fugitive' "Browser commit
+Plug 'junegunn/gv.vim'  "Browser commit
 
 "JavaScript
 Plug 'pangloss/vim-javascript'    " JavaScript support
