@@ -61,8 +61,8 @@ My keybindings in normal mode
 
 | Key                  | Action                     |
 | -------------------- | -------------------------- |
-| **,+w**              | Save a file                 |
-| **,+fs**             | Search a file               |
+| **,+w**              | Save a file                |
+| **,+fs**             | Search a file              |
 | **,+tt**             | Open a terminal            |
 | **a**                | Flutter run                |
 | **q**                | Flutter quit               |
@@ -70,8 +70,11 @@ My keybindings in normal mode
 | **fR**               | Flutter Restart            |  
 | **Ctrl+n**           | Nerd Tree                  |
 | **Ctrl+a**           | Format code                |
-| **gd**               | Go definition               |
-| **gy**               | Type definition             |
+| **gd**               | Go definition              |
+| **gy**               | Type definition            |
 | **gi**               | Go implementation          |
 | **gr**               | Go references              |
+| **F5**               | History undo               |
+| **F1**               | Task manager               |
+| **F2**               | Task global manager        |
 

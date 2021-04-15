@@ -25,7 +25,9 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set mouse=nicr
 set clipboard=unnamedplus       " Copy/paste between vim and other programs.
-
+nnoremap <F5> :UndotreeToggle<CR>
+nnoremap <F1> :Todo // from git repo<CR>
+nnoremap <F2> :Todo g<CR>
 "Search
 let mapleader = ","
 noremap <leader>w :w<cr>
@@ -58,6 +60,8 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'jiangmiao/auto-pairs' "Complte the simbol 
 Plug 'alvan/vim-closetag'   "Close tag in html
 Plug 'yggdroot/indentline' "A ident help for python and other languajes
+Plug 'mbbill/undotree'
+Plug 'vuciv/vim-bujo' " Task manager
 
 "JavaScript
 Plug 'pangloss/vim-javascript'    " JavaScript support
