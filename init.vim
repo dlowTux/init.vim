@@ -64,7 +64,7 @@ Plug 'mbbill/undotree'
 Plug 'vuciv/vim-bujo' " Task manager
 Plug 'tpope/vim-fugitive' "Browser commit
 Plug 'junegunn/gv.vim'  "Browser commit
-
+Plug 'mattn/emmet-vim' "emmet
 "JavaScript
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
