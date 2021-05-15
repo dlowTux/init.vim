@@ -29,7 +29,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 ### yarn
 ```
-sudo npm install yarn
+sudo npm install yarn -g
 ```
 
 ### Setting
