@@ -45,6 +45,7 @@ nnoremap <leader>fD :FlutterVisualDebug<cr>
 "NerdTree 
 map <C-n> :NERDTreeToggle<CR>
 map <C-a> :Prettier<CR>
+let NERDTreeShowHidden=1
 filetype plugin indent on    " required
 set t_Co=256                    " Set if term supports 256 colors.
 "Plugins
@@ -94,9 +95,9 @@ let g:python_highlight_all = 1
 "colorscheme deus
 
 "Matirial
-"let g:material_terminal_italics = 1
-"let g:material_theme_style = 'darker'
-"colorscheme material
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'darker'
+colorscheme material
 
 "ayu
 "set termguicolors     " enable true colors support
@@ -105,25 +106,25 @@ let g:python_highlight_all = 1
 "let g:airline_theme = 'ayu'
 
 "onedark
-if (has("autocmd") && !has("gui_running"))
-augroup colorset
- autocmd!
- let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
- autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " `bg` will not be styled since there is no `bg` setting
- augroup END
-endif
+"if (has("autocmd") && !has("gui_running"))
+"augroup colorset
+ "autocmd!
+ "let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
+ "autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " `bg` will not be styled since there is no `bg` setting
+" augroup END
+"endif
 
-hi Comment cterm=italic
-let g:onedark_hide_endofbuffer=1
-let g:onedark_terminal_italics=1
-let g:onedark_termcolors=256
+"hi Comment cterm=italic
+"let g:onedark_hide_endofbuffer=1
+"let g:onedark_terminal_italics=1
+"let g:onedark_termcolors=256
 
-if(has("termguicolors"))
-hi LineNr ctermbg=NONE guibg=NONE
-endif
+"if(has("termguicolors"))
+"hi LineNr ctermbg=NONE guibg=NONE
+"endif
 
-colorscheme onedark
-let g:airline_theme = 'onedark'
+"colorscheme onedark
+"let g:airline_theme = 'onedark'
 
 "Server dart and typescript
 let dart_html_in_string=v:true
